@@ -4,7 +4,7 @@ var router = express.Router();
 var fs = require('fs');
 
 /* GET home page. */
-var file = fs.readFileSync('./public/content.json','utf-8');
+var file = fs.readFileSync('./public/content_IND.json','utf-8');
 var json = JSON.parse(file);
 
 router.get('/', function(req, res, next) {

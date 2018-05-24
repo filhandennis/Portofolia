@@ -5,7 +5,7 @@
 		"pictures":[
 			"/images/pict/pf.png"
 		],
-		"short_description": "I’m passionate about technology because its about building better tools. Tools by definition help you do work. And the work that we’re doing is ultimately about people.",
+		"short_description": "Mahasiswa yang tertantang untuk menyelesaikan suatu masalah dengan menggunakan perkembangan teknologi. Tertarik akan Programming Segment",
 		"born": {
 			"place": "Medan",
 			"date": "1997-08-21"
@@ -32,7 +32,7 @@
 				"type":"academic",
 				"priority": 0,
 				"place":"Medan",
-				"description":"",
+				"description":"Jl. Brigjend. Katamso No. 366",
 				"date":{
 					"start":"2003-01-01",
 					"end":"2009-01-01"
@@ -46,7 +46,7 @@
 				"type":"academic",
 				"priority": 0,
 				"place":"Medan",
-				"description":"",
+				"description":"Jl. Brigjend. Katamso, Kampung Baru, Kec. Medan Maimun, Kota Medan Prov. Sumatera Utara",
 				"date":{
 					"start":"2009-01-01",
 					"end":"2012-01-01"
@@ -60,7 +60,7 @@
 				"type":"academic",
 				"priority": 0,
 				"place":"Medan",
-				"description":"IPA",
+				"description":"Jurusan IPA",
 				"date":{
 					"start":"2012-01-01",
 					"end":"2015-01-01"
@@ -74,7 +74,7 @@
 				"type":"academic",
 				"priority": 0,
 				"place":"Bandung",
-				"description":"Faculty of Industrial Engineering, division of Sistem Information",
+				"description":"Fakultas Rekayasa Industri, Jurusan Sistem Informasi.",
 				"date":{
 					"start":"2015-01-01",
 					"end":""
@@ -84,11 +84,11 @@
 				]
 			},
 			{
-				"title":"Chief Divisi of Web Development ICT-ONE SMAN 1 Medan",
+				"title":"Kepala Department Web Development ICT-ONE SMAN 1 Medan",
 				"type":"experience",
 				"priority": 0,
 				"place":"Medan",
-				"description":"",
+				"description":"ICT-One Smansa merupakan Ekskul sekolah untuk mengembangkan Teknologi. Ikut andil dalam Pelatihan & Pemberian Informasi akan Perkembangan Teknologi Web.",
 				"date":{
 					"start":"2013-01-01",
 					"end":"2015-01-01"
@@ -98,7 +98,7 @@
 				]
 			},
 			{
-				"title":"Asistant of Prodase Laboratorium (Programming, Database and Software Engineering)",
+				"title":"Assisten Prodase Laboratorium (Programming, Database and Software Engineering)",
 				"type":"experience",
 				"priority": 0,
 				"place":"GD. C (C201&223) TELKOM UNIVERSITY",
@@ -130,7 +130,7 @@
 				"type":"experience",
 				"priority": 0,
 				"place":"Malang",
-				"description":"",
+				"description":"Finalist lomba Mobile Programming yang diadakan di Telkom Malang dengan membawakan ide yang bertemakan E-Goverment",
 				"date":{
 					"start":"2017-11-01",
 					"end":"2017-11-01"
@@ -140,11 +140,11 @@
 				]
 			},
 			{
-				"title":"Intership Golden Energy Mines",
+				"title":"Internship Golden Energy Mines",
 				"type":"experience",
 				"priority": 0,
 				"place":"Kuningan, Jakarta",
-				"description":"HRIS Division",
+				"description":"Divisi HRIS. Melakukan riset tentang penerapan aplikasi yang dapat membantu Divisi HR terkait. Seperti Helpdesk Center (Zendesk) dan Chat Bot (Reply.ai)",
 				"date":{
 					"start":"2017-12-13",
 					"end":"2018-01-12"
@@ -212,23 +212,26 @@
 		],
 
 		"Skills":[
-			{"name":"php", "type":"backend"},
-			{"name":"laravel", "type":"backend"},
-			{"name":"nodejs", "type":"backend"},
-			{"name":"java", "type":"platform"},
-			{"name":"mysql", "type":"database"},
-			{"name":"oracle sql", "type":"database"},
-			{"name":"mongodb", "type":"database"},
-			{"name":"pouchdb", "type":"database"},
-			{"name":"json", "type":"database"},
-			{"name":"javascript", "type":"platform"},
-			{"name":"jquery", "type":"frontend"},
-			{"name":"css", "type":"frontend"},
-			{"name":"html", "type":"frontend"},
-			{"name":"microsoft word", "type":"office"},
-			{"name":"microsoft excel", "type":"office"},
-			{"name":"microsoft powerpoint", "type":"office"},
-			{"name":"corel draw", "type":"multimedia"}
+			{"name":"php", "type":"programming"},
+			{"name":"laravel", "type":"programming"},
+			{"name":"nodejs", "type":"programming"},
+			{"name":"java", "type":"programming"},
+			{"name":"mysql", "type":"db"},
+			{"name":"oracle sql", "type":"db"},
+			{"name":"mongodb", "type":"db"},
+			{"name":"pouchdb", "type":"db"},
+			{"name":"json", "type":"programming"},
+			{"name":"javascript", "type":"programming"},
+			{"name":"jquery", "type":"programming"},
+			{"name":"css", "type":"programming"},
+			{"name":"html", "type":"programming"},
+			{"name":"microsoft word", "type":"tools"},
+			{"name":"microsoft excel", "type":"tools"},
+			{"name":"microsoft powerpoint", "type":"tools"},
+			{"name":"UML", "type":"tools"},
+			{"name":"corel draw", "type":"design"},
+			{"name":"windows", "type":"system"},
+			{"name":"linux mint (ubuntu)", "type":"system"}
 		],
 		"Performances":{
 			"pros":[

@@ -10,6 +10,8 @@ block styles
 
 
 		.profile{margin-top:15%;}
+		.profile .cover{vertical-align:middle; padding:8px;}
+		.profile .cover img{border-radius:50%; max-width:245px; width:99%;}
 		.profile .information{padding:8px;}
 
 		.personal-detail{}
@@ -22,8 +24,8 @@ block styles
 			.profile{text-align:center;}
 		}
 		@media (max-width: 768px) {
-			.personal-detail .pictures{display:none;}
-			.personal-detail .information{background-color:rgba(255,255,255,0.4); background-image: =content.profile.pictures[0]; }
+			#informations .pictures{display:none;}
+			#informations .information{background-color:rgba(255,255,255,0.4); background-image: =content.profile.pictures[0]; }
 
 			.activity-index{display:block; margin:5% 0 2%;}
 		}
@@ -54,49 +56,65 @@ block content
 
 
 	//- /**
-	//- * PERSONAL DETAILS
+	//- * DETAILS
 	//- **/
-	div#personal.row(style='margin:0 0 6%; background-color:#fff; min-height:100vh;')
+	div#informations.row(style='margin:0 0 6%; background-color:#fff; min-height:100vh;')
 		.col-12(style='padding:5% 10%;')
-			h1(style='margin:0 0 2% 0;') Personal Details
-			.personal-detail.row
+			h1(style='margin:0 0 2% 0;') Informations
+			.row
 				.pictures.col-md-5
 					img(src= content.profile.pictures[0], style='width:98%;')
 				.information.col-md-7
-					div.info
-						h5 Fullname
-						h3= content.profile.fullname
-						h5 Place, Date of Birth
-						h3
-							= content.profile.born.place
-							|, 
-							= content.profile.born.date
-						h5 Religion
-						h3= content.profile.religion
-						h5 Nationality
-						h3= content.profile.nationality
-						h5 Address
-						h3(style='font-size:160%;') 
-							= content.profile.address[0]
-							// = Pondok Arfa Kamar No. 57, Gang PGA, Dayeuhkolot, Kab. Bandung
-						.row(style='margin:2% 0 0 0; padding:0px;')
-							div(style='padding:0px;')
-								h7 Academic Infomation
-								h5 University
-								h3= content.profile.university.name
-								h5 Division
-								h3= content.profile.university.division
-								h5 Entry Year
-								h3= content.profile.university.entry_year
-								h5 GPA
-								h3= content.profile.university.gpa
-							//- div(style='padding:0px;')
-							//- 	h6 Overview Skill
-							//- 	h5 Computer Ability
-							//- 		div(style='padding:6px;')
-							//- 			.icon
-							//- 				i.fab.fa-php
-							//- 	h5 Specialized Ability
+					.row
+						.col-md-6.personal-detail
+							b
+								h2 Personal Details
+							h5 Fullname
+							h3= content.profile.fullname
+							h5 Place, Date of Birth
+							h3
+								= content.profile.born.place
+								|, 
+								= content.profile.born.date
+							h5 Religion
+							h3= content.profile.religion
+							h5 Nationality
+							h3= content.profile.nationality
+							h5 Address
+							h3(style='font-size:140%;') 
+								= content.profile.address[0]
+								// = Pondok Arfa Kamar No. 57, Gang PGA, Dayeuhkolot, Kab. Bandung
+							.row(style='margin:2% 0 0 0; padding:0px;')
+								div(style='padding:0px;')
+									h7 Academic Infomation
+									h5 University
+									h3= content.profile.university.name
+									h5 Division
+									h3= content.profile.university.division
+									h5 Entry Year
+									h3= content.profile.university.entry_year
+									h5 GPA
+									h3= content.profile.university.gpa
+								//- div(style='padding:0px;')
+								//- 	h6 Overview Skill
+								//- 	h5 Computer Ability
+								//- 		div(style='padding:6px;')
+								//- 			.icon
+								//- 				i.fab.fa-php
+								//- 	h5 Specialized Ability
+						.col-md-6.skill-detail
+							b
+								h2 Skill Details
+								- var skills = content.profile.Skills.sort((a,b)=>{return a.type>b.type?1:a.type<b.type?-1:0;})
+								- var skey = ''
+								- var skillsa={};
+								- each item, i in skills
+									- if(item.type==skey)
+										- skills[skey] = item.name	
+									- else
+										- skey=item.type
+										- skillsa.push(skey)
+
 						
 	//- /**
 	//- * ACTIVITIES
@@ -129,8 +147,11 @@ block content
 							.timeline-content
 								h3.timeline-title
 									- var title = (item.title).toLowerCase().replace(/\s+/g,"-")
-									a(href='/activity/'+title)
-										=item.title
+									- if(item.attachments.length>0)
+										a(href='/activity/'+title)
+											=item.title
+									- else
+										span= item.title
 								p= item.description
 									//- | Nullam vel sem. Nullam vel sem. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Donec vitae sapien ut libero venenatis faucibus. ullam dictum felis eu pede mollis pretium. Pellentesque ut neque.
 	

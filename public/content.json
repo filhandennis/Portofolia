@@ -1,0 +1,219 @@
+{
+	"profile": {
+		"fullname": "Filhan Dennis",
+		"cover": "/images/pict/pp-25-1-trans.png",
+		"pictures":[
+			"/images/pict/pf.png"
+		],
+		"short_description": "I’m passionate about technology because its about building better tools. Tools by definition help you do work. And the work that we’re doing is ultimately about people.",
+		"born": {
+			"place": "Medan",
+			"date": "1997-08-21"
+		},
+		"religion": "Islam",
+		"nationality": "Indonesia",
+		"address": [
+			"Pondok Arfa Kamar No. 57, Gang PGA, Dayeuhkolot, Kab. Bandung"
+		],
+
+		"university": {
+			"name": "Telkom University",
+			"place": "Bandung",
+			"country": "Indonesia",
+			"faculty": "Industrial Engineering",
+			"division": "Information System",
+			"entry_year": 2015,
+			"gpa": 3.37
+		},
+
+		"Activities": [
+			{
+				"title":"SD Negeri 060905 Medan",
+				"type":"academic",
+				"priority": 0,
+				"place":"Medan",
+				"description":"",
+				"date":{
+					"start":"2003-01-01",
+					"end":"2009-01-01"
+				}
+			},
+			{
+				"title":"SMP Negeri 2 Medan",
+				"type":"academic",
+				"priority": 0,
+				"place":"Medan",
+				"description":"",
+				"date":{
+					"start":"2009-01-01",
+					"end":"2012-01-01"
+				}
+			},
+			{
+				"title":"SMA Negeri 1 Medan",
+				"type":"academic",
+				"priority": 0,
+				"place":"Medan",
+				"description":"IPA",
+				"date":{
+					"start":"2012-01-01",
+					"end":"2015-01-01"
+				}
+			},
+			{
+				"title":"Telkom University",
+				"type":"academic",
+				"priority": 0,
+				"place":"Bandung",
+				"description":"Faculty of Industrial Engineering, division of Sistem Information",
+				"date":{
+					"start":"2015-01-01",
+					"end":""
+				}
+			},
+			{
+				"title":"Chief Divisi of Web Development ICT-ONE SMAN 1 Medan",
+				"type":"experience",
+				"priority": 0,
+				"place":"Medan",
+				"description":"",
+				"date":{
+					"start":"2013-01-01",
+					"end":"2015-01-01"
+				}
+			},
+			{
+				"title":"Asistant of Prodase Laboratorium (Programming, Database and Software Engineering)",
+				"type":"experience",
+				"priority": 0,
+				"place":"GD. C (C201&223) TELKOM UNIVERSITY",
+				"description":"",
+				"date":{
+					"start":"2016-01-01",
+					"end":""
+				}
+			},
+			{
+				"title":"Bootcamp & Certification Junior Web Programmer",
+				"type":"experience",
+				"priority": 0,
+				"place":"Bandung Technopark",
+				"description":"",
+				"date":{
+					"start":"2017-10-01",
+					"end":"2017-10-01"
+				}
+			},
+			{
+				"title":"Finalist Mobile Hackfest Challenge 2017",
+				"type":"experience",
+				"priority": 0,
+				"place":"Malang",
+				"description":"",
+				"date":{
+					"start":"2017-11-01",
+					"end":"2017-11-01"
+				}
+			},
+			{
+				"title":"Intership Golden Energy Mines",
+				"type":"experience",
+				"priority": 0,
+				"place":"Kuningan, Jakarta",
+				"description":"HRIS Division",
+				"date":{
+					"start":"2017-12-13",
+					"end":"2018-01-12"
+				}
+			},
+			{
+				"title":"SAP Fundamental",
+				"type":"certificate",
+				"priority": 0,
+				"place":"Bandung",
+				"description":"Edugate",
+				"date":{
+					"start":"2017-04-01",
+					"end":"2017-04-01"
+				}
+			},
+			{
+				"title":"Junior Web Development",
+				"type":"certificate",
+				"priority": 0,
+				"place":"Bandung",
+				"description":"BNSP",
+				"date":{
+					"start":"2017-10-01",
+					"end":"2017-10-01"
+				}
+			},
+			{
+				"title":"Hackfest Challenge 2017",
+				"type":"certificate",
+				"priority": 0,
+				"place":"Malang",
+				"description":"Hackfest Challenge",
+				"date":{
+					"start":"2017-11-01",
+					"end":"2017-11-01"
+				}
+			},
+			{
+				"title":"Waiting ...",
+				"type":"project",
+				"priority": 0,
+				"place":"",
+				"description":"",
+				"date":{
+					"start":"2018-01-01",
+					"end":""
+				}
+			}
+		],
+
+		"Skills":[
+			{"name":"php", "type":"backend"},
+			{"name":"laravel", "type":"backend"},
+			{"name":"nodejs", "type":"backend"},
+			{"name":"java", "type":"platform"},
+			{"name":"mysql", "type":"database"},
+			{"name":"oracle sql", "type":"database"},
+			{"name":"mongodb", "type":"database"},
+			{"name":"pouchdb", "type":"database"},
+			{"name":"json", "type":"database"},
+			{"name":"javascript", "type":"platform"},
+			{"name":"jquery", "type":"frontend"},
+			{"name":"css", "type":"frontend"},
+			{"name":"html", "type":"frontend"},
+			{"name":"microsoft word", "type":"office"},
+			{"name":"microsoft excel", "type":"office"},
+			{"name":"microsoft powerpoint", "type":"office"},
+			{"name":"corel draw", "type":"multimedia"}
+		],
+		"Performances":{
+			"pros":[
+				"Fast Learning",
+				"Fast Learning",
+				"Fast Learning"
+			],
+			"cons":[
+				"quickly tired",
+				"quickly tired",
+				"quickly tired"
+			]
+		},
+
+		"Contacts":{
+			"phone":"087729787832",
+			"email":"filhandennis@hotmail.com",
+			"social":[
+				{"name": "Line", "link":"dennisfilhan", "icon":""},
+				{"name": "Whatsapp", "link":"087729787832", "icon":""},
+				{"name": "Facebook", "link":"https://www.facebook.com/filhandennis", "icon":""},
+				{"name": "LinkedIn", "link":"", "icon":""},
+				{"name": "Google+", "link":"", "icon":""}
+			]
+		}
+	}
+}

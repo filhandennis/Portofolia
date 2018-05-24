@@ -1,0 +1,187 @@
+extends layout
+
+block styles
+	link(rel='stylesheet', href='/css/timeline.css')
+	style.
+		@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,700);
+		body{margin:0; padding:0; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;}
+		
+		.timeline h1, .timeline h2, .timeline h3, .timeline h4, .timeline h5, .timeline h6 {line-height: 1;}
+
+
+		.profile{margin-top:15%;}
+		.profile .information{padding:8px;}
+
+		.personal-detail{}
+		.personal-detail .pictures{}
+		.personal-detail .information{}
+
+		.activity-index{display:inline-block; margin:0 0 0 2%;}
+		
+		@media (max-width: 568px) {
+			.profile{text-align:center;}
+		}
+		@media (max-width: 768px) {
+			.personal-detail .pictures{display:none;}
+			.personal-detail .information{background-color:rgba(255,255,255,0.4); background-image: =content.profile.pictures[0]; }
+
+			.activity-index{display:block; margin:5% 0 2%;}
+		}
+
+block content
+	//- /**
+	//- * DISPLAY PROFILE
+	//- **/
+	div#cover.row(style='margin:0; background-color:rgba(200,200,200,0.4); height:100vh;')
+		.profile.col-md-8.offset-md-2
+			.row
+				.cover.col-md-5.col-sm-5.text-center
+					img(src= content.profile.cover)
+					| &nbsp;
+				.information.col-md-7.col-sm-5
+					- var hour=new Date().getHours();
+					h6(style='margin:0 0 -1.2%;') 
+						| Good&nbsp;
+						= (hour<12?'Morning':hour<18?'Afternoon':hour<22?'Evening':'Night')
+						| , I'm ...
+					h1= content.profile.fullname
+					h5= content.profile.short_description
+		div(style='position:absolute; bottom:16px; left:42%; text-transform:uppercase;')
+			h4
+				a(href='javascript:void;',style='padding:4px 12px; background-color:rgba(255,255,255,0.2); border-radius:10px;') 
+					|Start Tour&nbsp;
+					i.fa.fa-angle-right
+
+
+	//- /**
+	//- * PERSONAL DETAILS
+	//- **/
+	div#personal.row(style='margin:0 0 6%; background-color:#fff; min-height:100vh;')
+		.col-12(style='padding:5% 10%;')
+			h1(style='margin:0 0 2% 0;') Personal Details
+			.personal-detail.row
+				.pictures.col-md-5
+					img(src= content.profile.pictures[0], style='width:98%;')
+				.information.col-md-7
+					div.info
+						h5 Fullname
+						h3= content.profile.fullname
+						h5 Place, Date of Birth
+						h3
+							= content.profile.born.place
+							|, 
+							= content.profile.born.date
+						h5 Religion
+						h3= content.profile.religion
+						h5 Nationality
+						h3= content.profile.nationality
+						h5 Address
+						h3(style='font-size:160%;') 
+							= content.profile.address[0]
+							// = Pondok Arfa Kamar No. 57, Gang PGA, Dayeuhkolot, Kab. Bandung
+						.row(style='margin:2% 0 0 0; padding:0px;')
+							div(style='padding:0px;')
+								h7 Academic Infomation
+								h5 University
+								h3= content.profile.university.name
+								h5 Division
+								h3= content.profile.university.division
+								h5 Entry Year
+								h3= content.profile.university.entry_year
+								h5 GPA
+								h3= content.profile.university.gpa
+							//- div(style='padding:0px;')
+							//- 	h6 Overview Skill
+							//- 	h5 Computer Ability
+							//- 		div(style='padding:6px;')
+							//- 			.icon
+							//- 				i.fab.fa-php
+							//- 	h5 Specialized Ability
+						
+	//- /**
+	//- * ACTIVITIES
+	//- **/
+	div#activities.row(style='margin:0; background-color:#fff; min-height:100vh;')
+		.col-md-12(style='padding:5% 10%;')
+			h1 
+				| Activities History
+				span.activity-index(style='font-size:16px;')
+					a(href='#') Academic
+					| &nbsp;&middot;&nbsp;
+					a(href='#') Certificate
+					| &nbsp;&middot;&nbsp;
+					a(href='#') Experience
+					| &nbsp;&middot;&nbsp;
+					a(href='#') Projects
+			div(style='padding:5% 16px;')
+				ul.timeline.timeline-centered
+					- (content.profile.Activities).sort((a,b)=>{var dateA=new Date(a.date.start), dateB=new Date(b.date.start);return dateA - dateB;})
+					- each item, i in content.profile.Activities
+						li.timeline-item
+							.timeline-info
+								- var startYear = new Date(item.date.start).getFullYear()
+								span= startYear
+								- var endYear = ((item.date.end)!=(item.date.start) && (item.date.end).length>0) ? new Date(item.date.end).getFullYear():(Object.keys(item.date.end).length<1)?'PRESENT':''
+								- if(endYear!='')
+									| &nbsp;&middot;&nbsp;
+								span= endYear
+							.timeline-marker
+							.timeline-content
+								h3.timeline-title
+									- var title = (item.title).toLowerCase().replace(/\s+/g,"-")
+									a(href='/activity/'+title)
+										=item.title
+								p= item.description
+									//- | Nullam vel sem. Nullam vel sem. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Donec vitae sapien ut libero venenatis faucibus. ullam dictum felis eu pede mollis pretium. Pellentesque ut neque.
+	
+	//- /**
+	//- * SKILLS
+	//- **/
+	//- div.row(style='margin:0; background-color:#fff; min-height:100vh;')
+	//- 	div
+	//- 	div(style='padding:16px;')
+	//- 		h1 Skills
+	//- 		.row
+	//- 			.col.col-lg-6
+	//- 				h5 Programming
+	//- 				- each prog, i in content.profile.Skills
+	//- 					- if(prog.type=='backend' || prog.type=='database')
+	//- 						span= prog.name
+	//- 						- if(i!=(content.profile.Skills.length)-1)
+	//- 							| &nbsp;&middot;&nbsp;
+	//- 				h5 Multimedia & Office
+	//- 				- each prog, i in content.profile.Skills
+	//- 					- if(prog.type!='backend' || prog.type!='database')
+	//- 						span= prog.name
+	//- 						- if(i!=(content.profile.Skills.length)-1)
+	//- 							| &nbsp;&middot;&nbsp;
+	//- 			.col.col-lg-6
+	//- 				h5 Interpersonal
+
+
+	//- /**
+	//- * PERFORMANCES
+	//- **/
+	//- div.row(style='margin:0; background-color:#fcfcfc; min-height:100vh;')
+	//- 	.col.col-lg-3
+	//- 	.col.col-lg-9(style='padding:16px;')
+	//- 		//h1 Pros // Cons
+	//- 		.row(style='padding:5%;')
+	//- 			.card.col-5(style='margin-right:2%;')
+	//- 				.card-body
+	//- 					h4.card-title.text-center Pros
+	//- 				ul.list-group.list-group-flush
+	//- 					- each pros, i in content.profile.Performances.pros
+	//- 						li.list-group-item= pros
+
+
+	//- 			.card.col-5
+	//- 				.card-body
+	//- 					h4.card-title.text-center Cons
+	//- 				ul.list-group.list-group-flush
+	//- 					- each cons, i in content.profile.Performances.cons
+	//- 						li.list-group-item= cons
+
+	//- footer()
+
+block scripts

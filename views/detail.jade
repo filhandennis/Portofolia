@@ -1,0 +1,30 @@
+extends layout
+
+block styles
+	style.
+		@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,700);
+		body{margin:0; padding:0; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;}
+		
+		.timeline h1, .timeline h2, .timeline h3, .timeline h4, .timeline h5, .timeline h6 {line-height: 1;}
+
+block content
+	.container
+		//- Header
+		.row(style='min-height:100vh;')
+			.col-md-12(style='padding:5% 10%;')
+				.row(style='margin-top:2%;')
+					.col.col-sm-1(style='text-align:right;')
+						a.btn.btn-outline-secondary.btn-block.btn-lg(href='/#activities')
+							i.fa.fa-angle-left
+					div.col.col-sm-11(style='margin:0% 0 0 0;')
+						h6(style='margin:6px 0 -1%;') Activity
+						h3= content.title
+				.row
+					.col-md-12
+						i
+							|no description
+				
+
+
+
+block scripts

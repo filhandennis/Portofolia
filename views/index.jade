@@ -106,16 +106,14 @@ block content
 							b
 								h2 Skill Details
 								- var skills = content.profile.Skills.sort((a,b)=>{return a.type>b.type?1:a.type<b.type?-1:0;})
-								- var skey = ''
-								- var skillsa={};
-								- each item, i in skills
-									- if(item.type==skey)
-										- skills[skey] = item.name	
-									- else
-										- skey=item.type
-										- skillsa.push(skey)
-
-						
+								//- - var skey = ''
+								//- - var skillsa={};
+								//- - each item, i in skills
+								//- 	- if(item.type==skey)
+								//- 		- skills[skey] = item.name	
+								//- 	- else
+								//- 		- skey=item.type
+										- skillsaskey)						
 	//- /**
 	//- * ACTIVITIES
 	//- **/

@@ -5,7 +5,7 @@
 		"pictures":[
 			"/images/pict/pf.png"
 		],
-		"short_description": "Mahasiswa yang tertantang untuk menyelesaikan suatu masalah dengan menggunakan perkembangan teknologi. Tertarik akan Programming Segment",
+		"short_description": "Mahasiswa yang tertantang untuk menyelesaikan suatu masalah dengan menggunakan perkembangan teknologi. Sangat tertarik dengan Pemograman Komputer",
 		"born": {
 			"place": "Medan",
 			"date": "1997-08-21"
@@ -122,7 +122,8 @@
 					"end":"2017-10-01"
 				},
 				"attachments":[
-					
+					"https://firebasestorage.googleapis.com/v0/b/portofolis-9cd6a.appspot.com/o/document%2FPelatihan%20Junior%20Web%20Programming.JPG?alt=media&token=d56a49d6-eae2-4bb6-b8c1-fd29ccc0d427",
+					"https://firebasestorage.googleapis.com/v0/b/portofolis-9cd6a.appspot.com/o/document%2FSertifikat%20Pelatihan%20Junior%20Web%20Programming.jpg?alt=media&token=80a74611-65e4-4dba-a246-a001fe48acb0"
 				]
 			},
 			{
@@ -136,7 +137,7 @@
 					"end":"2017-11-01"
 				},
 				"attachments":[
-					
+					"https://firebasestorage.googleapis.com/v0/b/portofolis-9cd6a.appspot.com/o/document%2FDokumentasi%20Festifora%202017.jpg?alt=media&token=61ae5326-9e07-4fbe-854b-8730bf38abd6"
 				]
 			},
 			{
@@ -150,7 +151,7 @@
 					"end":"2018-01-12"
 				},
 				"attachments":[
-					
+					"https://firebasestorage.googleapis.com/v0/b/portofolis-9cd6a.appspot.com/o/document%2FSertifikat%20Intern%20GEMS.png?alt=media&token=98afa89d-0658-4547-9445-9eaf43593ba7"
 				]
 			},
 			{
@@ -164,7 +165,7 @@
 					"end":"2017-04-01"
 				},
 				"attachments":[
-					
+					"https://firebasestorage.googleapis.com/v0/b/portofolis-9cd6a.appspot.com/o/document%2FSertifikat%20Junior%20Web%20Programming.jpg?alt=media&token=988f5036-0ac6-4e09-811c-89e1244f825e"
 				]
 			},
 			{
@@ -178,7 +179,7 @@
 					"end":"2017-10-01"
 				},
 				"attachments":[
-					
+					"https://firebasestorage.googleapis.com/v0/b/portofolis-9cd6a.appspot.com/o/document%2FSertifikat%20Junior%20Web%20Programming.jpg?alt=media&token=988f5036-0ac6-4e09-811c-89e1244f825e"
 				]
 			},
 			{
@@ -192,46 +193,32 @@
 					"end":"2017-11-01"
 				},
 				"attachments":[
-					
-				]
-			},
-			{
-				"title":"Waiting ...",
-				"type":"project",
-				"priority": 0,
-				"place":"",
-				"description":"",
-				"date":{
-					"start":"2018-01-01",
-					"end":""
-				},
-				"attachments":[
-					
+					"https://firebasestorage.googleapis.com/v0/b/portofolis-9cd6a.appspot.com/o/document%2FSertifikat%20Finalis%20Filhan%20Dennis-01.jpg?alt=media&token=f0b38fc1-52ae-4c1f-be3b-afdae01b6928"
 				]
 			}
 		],
 
 		"Skills":[
-			{"name":"php", "type":"programming"},
-			{"name":"laravel", "type":"programming"},
-			{"name":"nodejs", "type":"programming"},
-			{"name":"java", "type":"programming"},
-			{"name":"mysql", "type":"db"},
-			{"name":"oracle sql", "type":"db"},
-			{"name":"mongodb", "type":"db"},
-			{"name":"pouchdb", "type":"db"},
-			{"name":"json", "type":"programming"},
-			{"name":"javascript", "type":"programming"},
-			{"name":"jquery", "type":"programming"},
-			{"name":"css", "type":"programming"},
-			{"name":"html", "type":"programming"},
-			{"name":"microsoft word", "type":"tools"},
-			{"name":"microsoft excel", "type":"tools"},
-			{"name":"microsoft powerpoint", "type":"tools"},
-			{"name":"UML", "type":"tools"},
-			{"name":"corel draw", "type":"design"},
-			{"name":"windows", "type":"system"},
-			{"name":"linux mint (ubuntu)", "type":"system"}
+			{"name":"php", "index":8, "type":"programming"},
+			{"name":"laravel", "index":4, "type":"programming"},
+			{"name":"nodejs", "index":5, "type":"programming"},
+			{"name":"java", "index":7, "type":"programming"},
+			{"name":"mysql", "index":4, "type":"db"},
+			{"name":"oracle sql", "index":2, "type":"db"},
+			{"name":"mongodb", "index":2, "type":"db"},
+			{"name":"pouchdb", "index":2, "type":"db"},
+			{"name":"firebase api", "index":5, "type":"programming"},
+			{"name":"javascript", "index":8, "type":"programming"},
+			{"name":"jquery", "index":7, "type":"programming"},
+			{"name":"css", "index":9, "type":"programming"},
+			{"name":"html", "index":10, "type":"programming"},
+			{"name":"microsoft word", "index":8, "type":"tools"},
+			{"name":"microsoft excel", "index":8, "type":"tools"},
+			{"name":"microsoft powerpoint", "index":5, "type":"tools"},
+			{"name":"UML", "index":5, "type":"tools"},
+			{"name":"corel draw", "index":3, "type":"design"},
+			{"name":"windows", "index":6, "type":"system"},
+			{"name":"linux mint (ubuntu)", "index":3, "type":"system"}
 		],
 		"Performances":{
 			"pros":[

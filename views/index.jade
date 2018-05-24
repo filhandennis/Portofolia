@@ -9,7 +9,9 @@ block styles
 		.timeline h1, .timeline h2, .timeline h3, .timeline h4, .timeline h5, .timeline h6 {line-height: 1;}
 
 
-		.profile{margin-top:15%;}
+		#cover canvas{position:absolute; z-index:-1; width:100%; height:100vh; left:0; top:0;}
+
+		.profile{margin-top:10%; margin-bottom:4%; padding:16px 5%; background:rgba(200,200,220,0.2); border-radius:8px;}
 		.profile .cover{vertical-align:middle; padding:8px;}
 		.profile .cover img{border-radius:50%; max-width:245px; width:99%;}
 		.profile .information{padding:8px;}
@@ -25,17 +27,18 @@ block styles
 		}
 		@media (max-width: 768px) {
 			#informations .pictures{display:none;}
-			#informations .information{background-color:rgba(255,255,255,0.4); background-image: =content.profile.pictures[0]; }
+			#informations .information::after{content: ""; opacity: 0.3; top: 0; left: 0; bottom: 0; right: 0; position: absolute;  z-index: -1; background:#fff url(/images/pict/pf.png) no-repeat center center; background-size:contain;}
 
 			.activity-index{display:block; margin:5% 0 2%;}
+			.profile{margin-top:0; }
 		}
 
 block content
 	//- /**
 	//- * DISPLAY PROFILE
 	//- **/
-	div#cover.row(style='margin:0; background-color:rgba(200,200,200,0.4); height:100vh;')
-		.profile.col-md-8.offset-md-2
+	div#cover.row(style='margin:0; min-height:100vh;')
+		.profile.col-md-8.offset-md-2(style='')
 			.row
 				.cover.col-md-5.col-sm-5.text-center
 					img(src= content.profile.cover)
@@ -44,21 +47,20 @@ block content
 					- var hour=new Date().getHours();
 					h6(style='margin:0 0 -1.2%;') 
 						| Good&nbsp;
-						= (hour<12?'Morning':hour<18?'Afternoon':hour<22?'Evening':'Night')
+						= (hour<=12?'Morning':hour<=18?'Afternoon':hour<=22?'Evening':'Night')
 						| , I'm ...
 					h1= content.profile.fullname
 					h5= content.profile.short_description
-		div(style='position:absolute; bottom:16px; left:42%; text-transform:uppercase;')
-			h4
-				a(href='javascript:void;',style='padding:4px 12px; background-color:rgba(255,255,255,0.2); border-radius:10px;') 
-					|Start Tour&nbsp;
+		.col-12(style='text-transform:uppercase; text-align:center;')
+			a.btn.btn-outline-secondary(href='javascript:void;',style='border-radius:10px;') 
+					|get in touch&nbsp;
 					i.fa.fa-angle-right
 
 
 	//- /**
 	//- * DETAILS
 	//- **/
-	div#informations.row(style='margin:0 0 6%; background-color:#fff; min-height:100vh;')
+	div#informations.row(style='margin:0 0 6%; min-height:100vh;')
 		.col-12(style='padding:5% 10%;')
 			h1(style='margin:0 0 2% 0;') Informations
 			.row
@@ -66,7 +68,7 @@ block content
 					img(src= content.profile.pictures[0], style='width:98%;')
 				.information.col-md-7
 					.row
-						.col-md-6.personal-detail
+						.col-md-7.personal-detail
 							b
 								h2 Personal Details
 							h5 Fullname
@@ -102,18 +104,21 @@ block content
 								//- 			.icon
 								//- 				i.fab.fa-php
 								//- 	h5 Specialized Ability
-						.col-md-6.skill-detail
+						.col-md-5.skill-detail
 							b
 								h2 Skill Details
 								- var skills = content.profile.Skills.sort((a,b)=>{return a.type>b.type?1:a.type<b.type?-1:0;})
-								//- - var skey = ''
-								//- - var skillsa={};
-								//- - each item, i in skills
-								//- 	- if(item.type==skey)
-								//- 		- skills[skey] = item.name	
-								//- 	- else
-								//- 		- skey=item.type
-										- skillsaskey)						
+								- var skillName = ["programming","db","tools",'system']
+								- each name in skillName
+									h5= (name).toUpperCase()
+									- var countTemp = 0
+									- each item,i in skills
+										- if(item.type==name)
+											- if(countTemp!=0)
+												| &nbsp;&middot;&nbsp;
+											- ++countTemp
+											b.badge(class= (item.index<4?'badge-light':item.index<7?'badge-info':item.index<=10?'badge-success':'badge-warning'))= item.name
+									hr
 	//- /**
 	//- * ACTIVITIES
 	//- **/
@@ -133,7 +138,7 @@ block content
 				ul.timeline.timeline-centered
 					- (content.profile.Activities).sort((a,b)=>{var dateA=new Date(a.date.start), dateB=new Date(b.date.start);return dateA - dateB;})
 					- each item, i in content.profile.Activities
-						li.timeline-item
+						li.timeline-item(class= item.type)
 							.timeline-info
 								- var startYear = new Date(item.date.start).getFullYear()
 								span= startYear
@@ -149,7 +154,10 @@ block content
 										a(href='/activity/'+title)
 											=item.title
 									- else
-										span= item.title
+										label= item.title
+									| &nbsp;
+									sub(style='font-size:10px; text-transform:uppercase;')
+										=item.type
 								p= item.description
 									//- | Nullam vel sem. Nullam vel sem. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla. Donec vitae sapien ut libero venenatis faucibus. ullam dictum felis eu pede mollis pretium. Pellentesque ut neque.
 	
@@ -204,3 +212,6 @@ block content
 	//- footer()
 
 block scripts
+	script(src='http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js')
+	script.
+		particlesJS("cover", {"particles":{"number":{"value":200,"density":{"enable":true,"value_area":800}},"color":{"value":"#e3e3e3"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.5,"random":true,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":8,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":false,"distance":150,"color":"#050000","opacity":0.4,"width":1},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"window","events":{"onhover":{"enable":false,"mode":"repulse"},"onclick":{"enable":false,"mode":"push"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});

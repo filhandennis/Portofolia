@@ -12,8 +12,11 @@ html
 		block styles
 	body
 		block content
-		include ./footer.jade 
+		footer
+			include ./footer.jade 
 
 	script(src='/jquery/jquery.min.js')
 	script(src='/bootstraps/js/bootstrap.min.js')
+	script(src='https://unpkg.com/sweetalert/dist/sweetalert.min.js')
+	script(src='/js/custom.js')
 	block scripts

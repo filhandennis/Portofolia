@@ -1,21 +1,49 @@
-div.row(style='margin:0; background-color:#fff; min-height:30vh; padding:16px;').text-center
-	.col.col-md-4
-		h4 Develop by
+div.footer-a.row(style='margin:0; min-height:30vh; padding:16px;')
+	.col-md-4
+		h4 Develop with
 		div
-			i.fab.fa-node-js
-			i.fab.fa-css3
-
-	.col.col-md-4
+			a(href='', title='ExpressJS for Backend').btn.btn-light
+				i.icon.fab.fa-node
+			a(href='', title='JS / JQuery for Plugin').btn.btn-light
+				i.icon.fab.fa-js
+			| &nbsp;
+			a.btn.btn-light(href='', title='Bootstrap Framework')
+				i.icon.fab.fa-css3
+			| &nbsp;
+			a.btn.btn-light(href='', title='Font-Awesome for Iconic')
+				i.icon.fab.fa-font-awesome
+			| &nbsp;
+			img.icon(src='https://image.flaticon.com/icons/svg/873/873120.svg', style='height:38px;', title='Heroku for Cloud Hosting')
+			| &nbsp;
+			a.btn.btn-light(href='https://github.com/filhandennis/Portofolia', title='The Repository')
+				i.icon.fab.fa-github
+	.col-md-4
+		
+	.col-md-4#mediaconnect()
 		h4 Contact
-		div(style='text-align:center;')
-			h7 Personal Number
-			h6 087729787832
-			h7 Email
-			h6 filhandennis@hotmail.com
-	.col.col-md-4
-		h4 Media Connect
 		div
-			img(height="32", width="32", src="https://unpkg.com/simple-icons@latest/icons/line.svg")
-			img(height="32", width="32", src="https://unpkg.com/simple-icons@latest/icons/whatsapp.svg")
-			img(height="32", width="32", src="https://unpkg.com/simple-icons@latest/icons/facebook.svg")
-			img(height="32", width="32", src="https://unpkg.com/simple-icons@latest/icons/linkedin.svg")
+			h6
+				| 087729787832 / 0812
+				| &nbsp;
+				i.fas.fa-phone
+			h6
+				| filhandennis@hotmail.com 
+				| &nbsp;
+				i.fas.fa-envelope
+		h4 Media Connect
+			div
+				button.btn.btn-light(title='LINE', data-text='@dennisfilhan')
+					i.action-contact.icon.fab.fa-line
+				| &nbsp;		
+				button.btn.btn-light(title='WhatsApp', data-text='087729787832')
+					i.action-contact.icon.fab.fa-whatsapp
+				| &nbsp;
+				button.btn.btn-light(title='Facebook', data-text='Filhan Dennis')
+					i.action-contact.icon.fab.fa-facebook
+				| &nbsp;
+				button.btn.btn-light(title='LinkedIn', data-text='#')
+					i.action-contact.icon.fab.fa-linkedin
+
+		div
+div.footer-b(style='padding:0.5%; text-align:center;')
+			h7 XANDORUI @2018

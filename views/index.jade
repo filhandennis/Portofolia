@@ -2,6 +2,7 @@ extends layout
 
 block styles
 	link(rel='stylesheet', href='/css/timeline.css')
+	link(rel='stylesheet', href='/css/jquery.fullpage.css')
 	style.
 		@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,700);
 		body{margin:0; padding:0; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;}
@@ -22,6 +23,15 @@ block styles
 
 		.activity-index{display:inline-block; margin:0 0 0 2%;}
 		
+		/**
+		 * Scrolling Option
+		 **/
+		#fp-nav ul li a span,.fp-slidesNav ul li a span{background-color:rgba(0,0,0,0.3);}
+		#fp-nav ul li .fp-tooltip{color:rgba(0,0,0,0.3);}
+		#fp-nav.left{left:5px;}
+		/**
+		 * Responsive CSS
+		 **/		
 		@media (max-width: 568px) {
 			.profile{text-align:center;}
 		}
@@ -30,15 +40,15 @@ block styles
 			#informations .information::after{content: ""; opacity: 0.3; top: 0; left: 0; bottom: 0; right: 0; position: absolute;  z-index: -1; background:#fff url(/images/pict/pf.png) no-repeat center center; background-size:contain;}
 
 			.activity-index{display:block; margin:5% 0 2%;}
-			.profile{margin-top:0; margin-bottom:0;}
-			#profilebtn{background-color:rgba(200,200,220,0.5); margin-top:0; padding:10px;}
+			.profile{margin-top:0; margin-bottom:0; border-radius:0;}
+			#profilebtn{background-color:rgba(200,200,220,0.3); margin-top:0; padding:10px;}
 		}
 
 block content
 	//- /**
 	//- * DISPLAY PROFILE
 	//- **/
-	div#cover.row(style='margin:0; min-height:100vh;')
+	div#cover.section.row(style='margin:0; min-height:100vh;')
 		.profile.col-md-8.offset-md-2(style='')
 			.row
 				.cover.col-md-5.col-sm-5.text-center
@@ -53,7 +63,7 @@ block content
 					h1= content.profile.fullname
 					h5= content.profile.short_description
 		.col-12#profilebtn(style='text-transform:uppercase; text-align:center;')
-			a.btn.btn-outline-secondary(href='#informations',style='border-radius:10px;') 
+			a#intouch.btn.btn-outline-secondary(href='#informations',style='border-radius:10px;') 
 					|get in touch&nbsp;
 					i.fa.fa-angle-right
 
@@ -61,7 +71,7 @@ block content
 	//- /**
 	//- * DETAILS
 	//- **/
-	div#informations.row(style='margin:0 0 6%; min-height:100vh;')
+	div#informations.section.row(style='margin:0 0 6%; min-height:100vh;')
 		.col-12(style='padding:5% 10%;')
 			h1(style='margin:0 0 2% 0;') Informations
 			.row
@@ -123,7 +133,7 @@ block content
 	//- /**
 	//- * ACTIVITIES
 	//- **/
-	div#activities.row(style='margin:0; background-color:#fff; min-height:100vh;')
+	div#activities.section.row(style='margin:0; background-color:#fff; min-height:100vh;')
 		.col-md-12(style='padding:5% 10%;')
 			h1 
 				| Activities History
@@ -213,6 +223,21 @@ block content
 	//- footer()
 
 block scripts
-	script(src='http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js')
+	script(src='/js/particles.min.js')
+	script(src='/js/jquery.fullpage.min.js')
+	script(src='/js/jquery.fullpage.extensions.min.js')
+	script(src='/js/scrolloverflow.min.js')
 	script.
 		particlesJS("cover", {"particles":{"number":{"value":200,"density":{"enable":true,"value_area":800}},"color":{"value":"#e3e3e3"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.5,"random":true,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":8,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":false,"distance":150,"color":"#050000","opacity":0.4,"width":1},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"window","events":{"onhover":{"enable":false,"mode":"repulse"},"onclick":{"enable":false,"mode":"push"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});
+
+	script.
+		$(document).ready((evt)=>{
+			$('#main-wrapper').fullpage({
+				navigation: true,
+				navigationPosition: 'left',
+				scrollOverflow: true,
+				scrollOverflowReset: true,
+				navigationTooltips: ['Introduction', 'Informations', 'Activities']
+			});
+		});
+		$('#intouch').on('click',(evt)=>{evt.preventDefault(); $.fn.fullpage.moveTo(2);});

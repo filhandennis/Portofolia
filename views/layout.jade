@@ -11,13 +11,13 @@ html
 		link(rel='stylesheet', href='/css/style.css')
 		block styles
 	body
-		block content
-		footer
-			include ./footer.jade 
+		div#main-wrapper
+			block content
+			footer.section.fp-auto-height
+				include ./footer.jade 
 
 	script(src='/jquery/jquery.min.js')
 	script(src='/bootstraps/js/bootstrap.min.js')
-	script(src='/js/sweetalert.min.js')
+	script(src='https://unpkg.com/sweetalert/dist/sweetalert.min.js')
 	script(src='/js/custom.js')
-	script(src='/js/particles.min.js')
 	block scripts

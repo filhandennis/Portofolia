@@ -30,7 +30,8 @@ block styles
 			#informations .information::after{content: ""; opacity: 0.3; top: 0; left: 0; bottom: 0; right: 0; position: absolute;  z-index: -1; background:#fff url(/images/pict/pf.png) no-repeat center center; background-size:contain;}
 
 			.activity-index{display:block; margin:5% 0 2%;}
-			.profile{margin-top:0; }
+			.profile{margin-top:0; margin-bottom:0;}
+			#profilebtn{background-color:rgba(200,200,220,0.5); margin-top:0; padding:8px; line-height:2;}
 		}
 
 block content
@@ -47,12 +48,12 @@ block content
 					- var hour=new Date().getHours();
 					h6(style='margin:0 0 -1.2%;') 
 						| Good&nbsp;
-						= (hour<=12?'Morning':hour<=18?'Afternoon':hour<=22?'Evening':'Night')
+						= (hour>=0 && hour<=12?'Morning':hour>12 && hour<=18?'Afternoon':hour>18&&hour<=22?'Evening':'Night')
 						| , I'm ...
 					h1= content.profile.fullname
 					h5= content.profile.short_description
-		.col-12(style='text-transform:uppercase; text-align:center;')
-			a.btn.btn-outline-secondary(href='javascript:void;',style='border-radius:10px;') 
+		.col-12#profilebtn(style='text-transform:uppercase; text-align:center;')
+			a.btn.btn-outline-secondary(href='#informations',style='border-radius:10px;') 
 					|get in touch&nbsp;
 					i.fa.fa-angle-right
 
